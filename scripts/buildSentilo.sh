@@ -50,7 +50,7 @@ clear
 
 # Step 1: Compile and build platform code.
 cd $CURRENT_DIR/..
-COMMAND="mvn clean install"
+COMMAND="mvn clean install -Dmaven.test.skip=true"
 echo ""
 echo "======================================="
 echo "Step 1: Compile and build platform code"
@@ -70,7 +70,7 @@ if [ "$ERROR_LEVEL" == "1" ]; then error; fi
 # Step 2: Run appassempler plugin into java-standalone modules for generate scripts for starts java processes.
 # For more  information about plugin visit http://mojo.codehaus.org/appassembler/appassembler-maven-plugin/ 
 cd $CURRENT_DIR/../sentilo-platform/sentilo-platform-server
-COMMAND="mvn package appassembler:assemble -P dev"
+COMMAND="mvn package appassembler:assemble -P dev -Dmaven.test.skip=true"
 echo ""
 echo "==========================================================="
 echo "Step 2.1: Generate script for start Sentilo PubSub server  "
