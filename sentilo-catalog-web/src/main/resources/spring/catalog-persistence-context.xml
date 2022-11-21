@@ -19,10 +19,10 @@
 	
 	
 	<!-- Default bean name is 'mongoClient' -->	
-	<mongo:mongo-client host="${catalog.mongodb.host}" port="${catalog.mongodb.port}" credentials="#{mongoCredentials}"/>
+	<mongo:mongo-client host="${catalog.mongodb.host}" port="${catalog.mongodb.port}" credential="#{mongoCredentials}"/>
 
 	<!-- Default bean name is 'mongoDbFactory' -->
-	<mongo:db-factory dbname="${catalog.mongodb.database}" mongo-ref="mongoClient"  write-concern="ACKNOWLEDGED" />
+	<mongo:db-factory dbname="${catalog.mongodb.database}" mongo-client-ref="mongoClient"  write-concern="ACKNOWLEDGED" />
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate" c:mongoDbFactory-ref="mongoDbFactory" />
 

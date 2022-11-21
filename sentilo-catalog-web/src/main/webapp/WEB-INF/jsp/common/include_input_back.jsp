@@ -2,7 +2,7 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 
 
-<c:if test="${(not empty currentBreadCrumb) && (not empty currentBreadCrumb.firstEntry())}"> 
+<c:if test="${(not empty currentBreadCrumb) && (not empty currentBreadCrumb.firstEntry)}"> 
  <c:url value="${currentBreadCrumb.firstEntry()}" var="final_back_url" scope="request">
 		<c:param name="sfbr" value="true" />
  </c:url>  
